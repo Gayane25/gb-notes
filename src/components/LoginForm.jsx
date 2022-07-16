@@ -8,15 +8,11 @@ import {useDispatch, useSelector} from "react-redux";
 function LoginForm() {
     const [email, setEmail]= useState("");
     const [pass, setPass]= useState("");
-    const user = useSelector(state=>state.auth)
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    let token;
     const handleSignIn = ()=>{
       dispatch(loginAsync(email,pass))
-      navigate("/dashboard");
-      console.log(user);
-      
+      navigate("/dashboard")
     }
   return (
     <div>

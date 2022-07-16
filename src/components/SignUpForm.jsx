@@ -12,17 +12,13 @@ function SignUpForm() {
     const [pass, setPass] = useState("");
     const dispatch = useDispatch();
     const navigate = useNavigate()
-     const user = useSelector(state=>state.auth);
+    //  const user = useSelector(state=>state.auth);
    
     const handleSignUp = ()=>{
       dispatch(authAsync(email, pass));
       navigate("/dashboard")
-      console.log(user)
+      // console.log(user)
       
-
-        // if(email && pass){
-        //     projectAuth.createUserWithEmailAndPassword(email, pass).then(res=>console.log(res))
-        // }
     }
 
    

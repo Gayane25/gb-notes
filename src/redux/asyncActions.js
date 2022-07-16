@@ -1,17 +1,10 @@
-import { loginCreator } from "./authReducer";
+import { loginCreator,loggedUser } from "./authReducer";
 import {projectAuth} from "../firebase/firestore"
 
 export const authAsync = (email, pass)=>{
-    let response;
     return async (dispatch)=>{
         if(email && pass){
-            await projectAuth.createUserWithEmailAndPassword(email, pass);
-            const token = await response.user.Aa;
-            console.log(token)
-            if(token){
-                localStorage.setItem("user", JSON.stringify(response.user));
-            }
-            dispatch(loginCreator(response));
+         await projectAuth.createUserWithEmailAndPassword(email, pass).then(res=> dispatch(loginCreator(res))).then(dispatch(loggedUser()))
             
         }
       
@@ -19,23 +12,16 @@ export const authAsync = (email, pass)=>{
 }
 
 export const loginAsync = (email, pass)=>{
-    let response;
     return async (dispatch)=>{
         if(email && pass){
-            response = await projectAuth.signInWithEmailAndPassword(email, pass);
-            const token = await response.user.Aa;
-            console.log(token)
-            if(token){
-                localStorage.setItem("user", JSON.stringify(response.user));
-            }
-            dispatch(loginCreator(response));
-            
+            await projectAuth.signInWithEmailAndPassword(email, pass).then(res=> dispatch(loginCreator(res))).then(dispatch(loggedUser()))
+         
         }
-       
-      
-       
+        
     }
 }
+
+
 
 // const token =  s;
 //             console.log(token)
