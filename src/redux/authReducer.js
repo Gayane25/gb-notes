@@ -11,6 +11,9 @@ export function authReducer(state=initialAuth, action){
         }
         case USER_LOGGED :{
             return {...state, isLogged:true }
+        } 
+        case USER_LOGOUT :{
+            return {...state,isLogged:false}
         }
         default :{
             return state;
@@ -19,4 +22,5 @@ export function authReducer(state=initialAuth, action){
 }
 
 export const loginCreator = (payload)=>({type:USER_LOGIN, payload});
-export const loggedUser = ()=>({type:USER_LOGGED})
+export const loggedUser = ()=>({type:USER_LOGGED});
+export const logOutUser = ()=>({type:USER_LOGOUT });

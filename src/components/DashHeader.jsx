@@ -1,20 +1,34 @@
 import React from 'react';
 import { Breadcrumb, Layout, Menu } from 'antd';
+import {LogoutOutlined}  from '@ant-design/icons';
+import logo from "../assets/logo.png";
+import {logOutUser} from "../redux/authReducer";
+import {useDispatch} from "react-redux";
+
 
 function DashHeader() {
     const { Header, Content, Footer } = Layout;
-
+    const dispatch = useDispatch();
+  
+    const handlelogOut = ()=>{
+      dispatch(logOutUser());
+   
+    }
   return (
     <Layout>
          <Header
           style={{
             position: 'fixed',
+            display: 'flex',
+            justifyContent:'space-between',
             zIndex: 1,
             width: '100%',
-            backgroundColor: '#1890ff'
+            backgroundColor: '#FFFFFF',
+            boxShadow: "rgb(0 0 0) 0px 10px 13px -14px, rgb(0 0 0 / 0.5%) 0px 12px 43px -5px"
           }}
         >
-          <div className="logo" />
+           <div><img src ={logo} alt="my-sites-logo" style={{width: "150px"}}/></div>
+          <span style={{ fontSize: '16px', color: '#6e7373' }} onClick={handlelogOut}><LogoutOutlined /> <span>Logout</span></span>
           
         </Header>
         {/* <Content
