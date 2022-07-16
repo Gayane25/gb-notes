@@ -1,9 +1,12 @@
 import React from 'react'
+import DashHeader from '../components/DashHeader';
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+      <DashHeader/>
+    </div>
   )
 }
 
-export default Dashboard
+export default Dashboard;
