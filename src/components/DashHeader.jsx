@@ -3,19 +3,27 @@ import { Breadcrumb, Layout, Menu } from 'antd';
 import {LogoutOutlined}  from '@ant-design/icons';
 import logo from "../assets/logo.png";
 import {logOutUser} from "../redux/authReducer";
-import {useDispatch} from "react-redux";
+import {useNavigate} from "react-router-dom"
+
+import {projectAuth} from "../firebase/firestore"
 
 
 function DashHeader() {
     const { Header, Content, Footer } = Layout;
-    const dispatch = useDispatch();
-  
-    const handlelogOut = ()=>{
-      dispatch(logOutUser());
+
    
-    }
+    const navigate = useNavigate();
+
+
+    const handlelogOut = ()=>{
+      projectAuth.signOut();
+      navigate('/login')
+      }
+      
+      
+    
   return (
-    <Layout>
+    <Layout style={{ marginBottom:"100px"}}>
          <Header
           style={{
             position: 'fixed',
@@ -24,11 +32,13 @@ function DashHeader() {
             zIndex: 1,
             width: '100%',
             backgroundColor: '#FFFFFF',
-            boxShadow: "rgb(0 0 0) 0px 10px 13px -14px, rgb(0 0 0 / 0.5%) 0px 12px 43px -5px"
+            boxShadow: "rgb(0 0 0) 0px 10px 13px -14px, rgb(0 0 0 / 0.5%) 0px 12px 43px -5px",
+           
           }}
         >
            <div><img src ={logo} alt="my-sites-logo" style={{width: "150px"}}/></div>
-          <span style={{ fontSize: '16px', color: '#6e7373' }} onClick={handlelogOut}><LogoutOutlined /> <span>Logout</span></span>
+          
+          <span style={{ fontSize: '16px', color: '#6e7373' }} onClick={handlelogOut} ><LogoutOutlined /> <span>Logout</span></span>
           
         </Header>
         {/* <Content

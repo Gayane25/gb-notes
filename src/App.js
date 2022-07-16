@@ -1,7 +1,6 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard";
@@ -10,6 +9,8 @@ import 'antd/dist/antd.css';
 
 function App() {
   
+ 
+
   return (
     <BrowserRouter>
       <Routes>  

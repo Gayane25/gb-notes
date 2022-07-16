@@ -1,65 +1,55 @@
-import React from 'react'
+import React from 'react';
+ import { useState } from 'react';
+import { createEditor} from 'slate';
+ import { Slate, Editable, withReact } from 'slate-react';
+ import {Button} from 'antd';
+
+ 
+ const initialValue = [
+  {
+    type: 'paragraph',
+    children: [
+    {text: 'Click anywhere and just start typing' }, 
+    
+  ],
+  },
+  {
+    type: 'header',
+    children: [
+    {text: "Highlighxxxxt any text, and use the menu that pops up to style your  however you like"}, 
+    
+  ],
+  },
+  {
+    type: 'paragraph',
+    children: [
+    {text:'Click the + buttons in your sidebar to add new pages'}, 
+    
+  ],
+  }
+];
+
 
 function DashContent() {
-  return (
-    <div>DashContent</div>
-  )
+  const [editor] = useState(() => withReact(createEditor()))
+
+   return (
+    <>
+    <Button type='primary' size='large'>+</Button>
+      <Slate editor={editor} value={initialValue}>
+        <h2>Get Started</h2>
+          <Editable style={{fontSize:"21px"}}/>
+        </Slate>
+        
+    </>
+    )
 }
+
 
 export default DashContent;
 
 
 
-// import { useState, useCallback } from 'react';
-// import { createEditor, Transforms, Editor  } from 'slate'
-// import { Slate, Editable, withReact } from 'slate-react'
-// import './App.css';
-
-// const initialValue = [
-//   {
-//   type: 'paragraph',
-//   children: [{ text: 'A line of text in a paragraph.' }],
-// }
-// ];
 
 
-// function App() {
-//   const [editor] = useState(() => withReact(createEditor()))
 
-//   const renderElement = useCallback(props => {
-//     switch (props.element.type) {
-//       case 'code':
-//         return <CodeElement {...props} />
-//       default:
-//         return <DefaultElement {...props} />
-//     }
-//   }, [])
-//   return <Slate editor={editor} value={initialValue}>
-//      <Editable 
-//       renderElement={renderElement}
-//      onKeyDown={event => {
-//        if (event.key === '`' && event.ctrlKey){
-//         event.preventDefault();
-//         Transforms.setNodes(
-//           editor,
-//           { type: 'code' },
-//           { match: n => Editor.isBlock(editor, n) }
-//         )
-//        }
-//         }}/>
-//   </Slate>
-// }
-
-
-// const CodeElement = props => {
-//   return (
-//     <pre {...props.attributes}>
-//       <code>{props.children}</code>
-//     </pre>
-//   )
-// }
-// const DefaultElement = props => {
-//   return <p {...props.attributes}>{props.children}</p>
-// }
-
-// export default App;

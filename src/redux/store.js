@@ -1,14 +1,12 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { authReducer, initialAuth } from "./authReducer";
+import { authReducer, } from "./authReducer";
 
 
 const store = createStore(combineReducers(
     {
         auth:authReducer,
     }
-),{
-    auth:initialAuth
-},applyMiddleware(thunk));
+),applyMiddleware(thunk));
 
 export default store;
