@@ -17,4 +17,4 @@ const firebaseConfig = {
   const projectAuth = firebase.auth()
 
 
-  export {projectFireStore, projectAuth}
+  export {projectFireStore, projectAuth};

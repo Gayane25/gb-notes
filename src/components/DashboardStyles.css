@@ -1,25 +1,31 @@
 .dashboard-side {
-min-width: 250px;
-padding:20px;
-background-color: #FFFFFF;
-height: 100vh;
-position:sticky;
-/* margin-top:80px; */
-
+  min-width: 250px;
+  padding: 20px;
+  background-color: #ffffff;
+  height: 100vh;
+  position: sticky;
 }
 .plus-button {
-    background-color:#bbdae2;
-    color:#FFFFFF;
-    max-width: 50px;
-    margin-top: 100px;
+  background-color: #8FDEEA;
+  color: #ffffff;
+  max-width: 50px;
+  margin-top: 100px;
 }
 .link-style {
-    text-decoration: none;
-    display:block;
+  text-decoration: none;
+  display: block;
 }
 .notes-content {
-    display:flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-top:120px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 120px;
+}
+.richtext-priority {
+  width: 44px;
+  height: 32px;
+  text-align: center;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
 }

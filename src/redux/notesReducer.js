@@ -1,5 +1,4 @@
 export const GET_NOTES = "GET_NOTES";
-export const SHOW_NOTES = "SHOW_NOTES";
 export const DELETE_NOTES = "DELETE_NOTES";
 
 export function notesReducer(state = [], action) {
@@ -10,13 +9,10 @@ export function notesReducer(state = [], action) {
 
       return [...state];
     }
-    case SHOW_NOTES: {
-      return state;
-    }
 
     case DELETE_NOTES: {
-      const newState = state.filter((el,index) => el.id !== action.payload.id);
-      return newState
+      const newState = state.filter((el, index) => el.id !== action.payload.id);
+      return newState;
     }
 
     default: {
@@ -26,4 +22,3 @@ export function notesReducer(state = [], action) {
 }
 
 export const putNotesInState = (payload) => ({ type: GET_NOTES, payload });
-export const showNotes = () => ({ type: SHOW_NOTES });

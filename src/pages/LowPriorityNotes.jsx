@@ -1,18 +1,18 @@
-import React,{useEffect} from 'react';
-import {useSelector} from "react-redux"
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import DashHeader from "../components/DashHeader";
+import DashContent from "../components/DashContent";
 import "antd/dist/antd.css";
-import {useNavigate} from "react-router-dom"
 import { Layout } from "antd";
-import DashHeader from '../components/DashHeader';
-import DashContent from '../components/DashContent';
 
 const { Content } = Layout;
 
-function LowPriorityNotes({notes}) {
-    const logged = useSelector((state) => state.auth);
+function LowPriorityNotes({ notes }) {
+  const logged = useSelector((state) => state.auth);
   let navigate = useNavigate();
-  
-notes = notes.filter(note=>note.priority ==="low");
+
+  notes = notes.filter((note) => note.priority === "low");
 
   useEffect(() => {
     if (!Object.keys(logged).length) {
@@ -22,14 +22,14 @@ notes = notes.filter(note=>note.priority ==="low");
 
   return (
     <Layout>
-    <DashHeader />
-    <Layout>
-      <Content>
-        <DashContent notes={notes}/>
-      </Content>
+      <DashHeader />
+      <Layout>
+        <Content>
+          <DashContent notes={notes} />
+        </Content>
+      </Layout>
     </Layout>
-  </Layout>
-  )
+  );
 }
 
 export default LowPriorityNotes;

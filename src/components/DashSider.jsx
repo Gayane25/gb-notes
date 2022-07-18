@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import "antd/dist/antd.css";
 import { Button } from "antd";
 import {
@@ -6,7 +6,7 @@ import {
   FileOutlined,
   SnippetsOutlined,
 } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+
 import "./DashboardStyles.css";
 
 function DashSider({ setOpenModal, openModal }) {

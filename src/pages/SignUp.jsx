@@ -1,17 +1,9 @@
-import React from "react";
-
 import SignUpForm from "../components/SignUpForm";
+import "./pagesStyles.css"
 
 function SignUp() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        textAlign: "center",
-        marginTop: "180px",
-      }}
-    >
+    <div className="form-ordering">
       <SignUpForm />
     </div>
   );

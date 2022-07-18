@@ -1,0 +1,27 @@
+.home-logo {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding: 100px 1px
+}
+.form-ordering {
+    display:flex;
+    justify-content: center;
+    text-align:center;
+    margin-top:180px;
+}
+
+/* style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: "100px",
+    paddingBottom: "100px",
+  }} */
+
+  /* style={{
+    display: "flex",
+    justifyContent: "center",
+    textAlign: "center",
+    marginTop: "180px",
+  }} */

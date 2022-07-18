@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch } from "react-redux/es/exports";
-// import Input from './Input';
-import { authAsync } from "../redux/asyncActions";
+import { authAsync } from "../redux/authActions";
+import LogoForLogin from "./LogoForLogin";
 import "antd/dist/antd.css";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
-import logo from "../assets/logo.png"
-import LogoForLogin from "./LogoForLogin";
+
 function SignUpForm() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -17,16 +16,9 @@ function SignUpForm() {
   const handleSignUp = () => {
     dispatch(authAsync(email, pass));
     navigate("/dashboard");
-    // console.log(user)
   };
 
   return (
-    // <div>
-    //     <Input value={email} onChange={(e)=>setEmail(e.target.value)} name ="Email" />
-    //     <Input value={pass} onChange={(e)=>setPass(e.target.value)} name ="Password"/>
-    //     <button onClick ={handleSignUp}>SignUp</button>
-
-    // </div>
     <Form
       name="normal_login"
       className="login-form"
@@ -35,7 +27,7 @@ function SignUpForm() {
         width: "300px",
       }}
     >
-      <LogoForLogin/>
+      <LogoForLogin />
       <Form.Item
         name="email"
         rules={[
@@ -72,7 +64,12 @@ function SignUpForm() {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button" block>
+        <Button
+          type="primary"
+          htmlType="submit"
+          className="login-form-button"
+          block
+        >
           Sign Up
         </Button>{" "}
         Or

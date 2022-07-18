@@ -1,9 +1,8 @@
-import React from "react";
-import { Layout } from "antd";
-import { LogoutOutlined } from "@ant-design/icons";
-import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { projectAuth } from "../firebase/firestore";
+import logo from "../assets/logo.png";
+import { Layout } from "antd";
+import { LogoutOutlined } from "@ant-design/icons";
 
 function DashHeader() {
   const { Header } = Layout;

@@ -1,10 +1,9 @@
-import React,{useState} from "react";
-import "antd/dist/antd.css";
-import RichText from "./RichText";
-import Notes from "./Notes";
+import {useState} from "react";
 import DashSider from "./DashSider";
-import "./DashboardStyles.css";
+import RichText from "./RichText";
 import SingleNote from "./SingleNote";
+import "./DashboardStyles.css";
+
 
 function DashContent({notes}) {
     const [openModal, setOpenModal] = useState(false);
