@@ -13,7 +13,7 @@ function Dashboard({ notes }) {
   let navigate = useNavigate();
 
   useEffect(() => {
-    if (!Object.keys(logged).length) {
+    if (!(Object.keys(logged).length)) {
       navigate("/login");
     }
   }, [logged]);
