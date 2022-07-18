@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, Navigate } from 'react-router-dom';
 import {loginAsync} from "../redux/asyncActions";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import 'antd/dist/antd.css';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
 
 function LoginForm() {
+  const loginned = useSelector(state=>state.auth)
     const [email, setEmail]= useState("");
     const [pass, setPass]= useState("");
     const dispatch = useDispatch();
@@ -14,7 +15,11 @@ function LoginForm() {
 
     const handleSignIn = ()=>{
       dispatch(loginAsync(email,pass))
-      navigate("/dashboard")
+      // <Navigate replace to ='/dashboard' ={true}/>
+      if(Object.values(loginned).length){
+        navigate("/dashboard")
+      }
+      
     }
   return (
    
