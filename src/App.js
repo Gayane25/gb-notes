@@ -1,3 +1,5 @@
+import{useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/Login";
@@ -9,18 +11,25 @@ import Notes from "./components/Notes";
 import Home from "./pages/Home";
 import HighNotes from "./components/HighNotes";
 import LowNotes from "./components/LowNotes";
+import HighPriorityNotes from "./pages/HighPriorityNotes";
+import LowPriorityNotes from "./pages/LowPriorityNotes";
+import { asyncGetData } from "./redux/AsyncGetData";
 
 function App() {
+  const dispatch = useDispatch();
+useEffect(()=>{
+  dispatch(asyncGetData())
+},[])
+const notes = useSelector(state=>state.notes)
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="notes" element={<Notes />} />
-        <Route path="highnotes" element={<HighNotes />} />
-        <Route path="lownotes" element={<LowNotes />} />
+        <Route path="dashboard" element={<Dashboard notes={notes} />} />
+        <Route path="/highnotes" element={<HighPriorityNotes notes={notes}/>} />
+        <Route path="/lownotes" element={<LowPriorityNotes notes={notes} />} />
         
 
       </Routes>

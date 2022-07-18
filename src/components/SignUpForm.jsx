@@ -7,6 +7,7 @@ import "antd/dist/antd.css";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
 import logo from "../assets/logo.png"
+import LogoForLogin from "./LogoForLogin";
 function SignUpForm() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -34,7 +35,7 @@ function SignUpForm() {
         width: "300px",
       }}
     >
-      <img src={logo} alt ="mysitesLogo" style={{maxWidth:"250px"}}/>
+      <LogoForLogin/>
       <Form.Item
         name="email"
         rules={[

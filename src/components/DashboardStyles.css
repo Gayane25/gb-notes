@@ -1,0 +1,25 @@
+.dashboard-side {
+min-width: 250px;
+padding:20px;
+background-color: #FFFFFF;
+height: 100vh;
+position:sticky;
+/* margin-top:80px; */
+
+}
+.plus-button {
+    background-color:#bbdae2;
+    color:#FFFFFF;
+    max-width: 50px;
+    margin-top: 100px;
+}
+.link-style {
+    text-decoration: none;
+    display:block;
+}
+.notes-content {
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top:120px;
+}

@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import 'antd/dist/antd.css';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
-import logo from "../assets/logo.png"
+import LogoForLogin from './LogoForLogin';
 function LoginForm() {
   const loginned = useSelector(state=>state.auth)
     const [email, setEmail]= useState("");
@@ -31,7 +31,7 @@ function LoginForm() {
           width:"300px"
         }}
       >
-        <img src={logo} alt="mysites logo"style={{maxWidth:"250px"}}/>
+        <LogoForLogin/>
     
         <Form.Item
           name="email"
