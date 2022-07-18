@@ -6,7 +6,7 @@ import { authAsync } from "../redux/asyncActions";
 import "antd/dist/antd.css";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
-
+import logo from "../assets/logo.png"
 function SignUpForm() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -34,6 +34,7 @@ function SignUpForm() {
         width: "300px",
       }}
     >
+      <img src={logo} alt ="mysitesLogo" style={{maxWidth:"250px"}}/>
       <Form.Item
         name="email"
         rules={[
@@ -70,7 +71,7 @@ function SignUpForm() {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
+        <Button type="primary" htmlType="submit" className="login-form-button" block>
           Sign Up
         </Button>{" "}
         Or

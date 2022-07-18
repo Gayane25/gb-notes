@@ -23,7 +23,7 @@ function DashHeader() {
       
     
   return (
-    <Layout style={{ marginBottom:"100px"}}>
+    <Layout>
          <Header
           style={{
             position: 'fixed',

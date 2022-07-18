@@ -10,7 +10,7 @@ function SingleNote({ note }) {
   const dispatch = useDispatch();
 
   return (
-    <div style={{ display: "flex", justifyContent:"space-between", padding:"10px", width:"370px", height:"119px",borderRadius:"10px", border: note.priority ==="high" ? "3px solid #58BA6E" : "3px solid #F6CB65"}}>
+    <div style={{ display: "flex", justifyContent:"space-between", margin:"5px", padding:"10px", width:"370px", height:"119px", borderRadius:"10px", border: note.priority ==="high" ? "3px solid #58BA6E" : "3px solid #F6CB65", boxShadow: "0px 10px 13px -12px #000000, 5px 5px 15px 5px rgba(0,0,0,0)"}}>
       <Slate
         editor={editor}
         value={[
@@ -20,7 +20,7 @@ function SingleNote({ note }) {
           },
         ]}
       >
-        <Editable style={{ fontSize: "21px" }} />
+        <Editable style={{ fontSize: "21px", overflow: "auto" }} />
       </Slate>
       <div style={{display:"flex", justifyContent:"space-between"}}>
       

@@ -55,6 +55,7 @@ function RichText({openModal,setOpenModal}) {
       <Button type="primary" onClick={() => addItem(value[0]["children"][0]["text"])} block>
         Create Note
       </Button>
+      <Button block onClick={()=> setOpenModal(false)}>Cancel</Button>
       </div>
     </div>
   );

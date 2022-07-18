@@ -14,7 +14,7 @@ function Notes() {
     },[])
 
   return (
-    <div>
+    <div style={{display:"flex", justifyContent:"space-evenly", flexWrap:'wrap', marginTop:"100px"}}>
         {notes.map((note)=><SingleNote key={note.id} note={note}/>)}
     </div>
   

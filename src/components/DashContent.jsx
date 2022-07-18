@@ -7,21 +7,20 @@ import { createEditor} from 'slate';
 import RichText from './RichText';
 import { Link } from 'react-router-dom';
 import Notes from './Notes';
+import DashSider from './DashSider';
 
 
 
 
-function DashContent() {
+function DashContent({openModal, setOpenModal}) {
 
-  const [openModal,setOpenModal]= useState(false);
-  const handleModalOpen =()=>setOpenModal(!openModal)
+  
    return (
-    <>
-    <Button style={{backgroundColor:"rgb(37, 150, 190)", color:"FFFFFF"}} size='large' onClick={handleModalOpen} >+</Button>
+    <div style={{display:"flex"}}>
+    <DashSider openModal={openModal} setOpenModal={setOpenModal}/>
     {openModal && <RichText openModal={openModal} setOpenModal={setOpenModal}/>}
-     
     <Notes/>
-    </>
+    </div>
     )
 }
 

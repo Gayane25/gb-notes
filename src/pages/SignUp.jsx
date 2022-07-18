@@ -9,7 +9,7 @@ function SignUp() {
         display: "flex",
         justifyContent: "center",
         textAlign: "center",
-        marginTop: "250px",
+        marginTop: "180px",
       }}
     >
       <SignUpForm />
